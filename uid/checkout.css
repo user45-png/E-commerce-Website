@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+}
+
+header {
+  background-color: #232f3e;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment {
+  margin-top: 20px;
+}
+
+.payment label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.payment input[type="text"],
+.payment textarea,
+.payment input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.payment input[type="radio"] {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.payment input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.payment input[type="submit"]:hover {
+  background-color: #555;
+}
+
+.payment img {
+  width: 300px;
+  height: 300px;
+}
+
+nav {
+  background-color: #2f3e4e;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.content {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h2 {
+  color: #000000;
+}
+
+p {
+  color: #666666;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+footer {
+  background-color: #232f3e;
+  color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+
+.payment .radio-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.payment .radio-container label {
+  margin: 0;
+  margin-left: 5px;
+  width: auto;
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+ <link rel ="stylesheet" href ="product.css">
+</head>
+<body>
+    <header>
+      <nav class="menu">
+        <div class="dropdown">
+         
+            <button onclick="toggleMenu()" class="menu_button">
+              Menu
+            </button>
+      
+            <div class="dropdown-content" id="menuContent">
+                <a href="mens.html">Men's</a>
+                <a href="womens.html">Women's</a>
+                <a href="kids.html">Kids</a>
+            </div>
+        </div>
+    </nav>
+    
+      
+        <div class="cart">
+            <div class="cart-box" id="cartBox">
+              
+              <ul id="cartItems">
+               
+              </ul>
+              <button class ="cart-button" onclick="redirectToCheckout()" href ="checkout.html">
+                <span class="cart-icon">🛒</span>Cart
+              </button>
+                
+            </div>
+            
+          </div>
+          
+        </header>
+       
+        <nav>
+          <a href="homepage.html">Home</a>
+          <a href="aboutus.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="title">
+          <h1>Mens clothing</h1>
+        </div>
+        <div class="filter">
+          <label for="minPrice">Min Price:</label>
+          <input type="number" id="minPrice" min="0" placeholder="Min">
+          <label for="maxPrice">Max Price:</label>
+          <input type="number" id="maxPrice" min="0" placeholder="Max">
+          <button onclick="filterProducts()" style="color: black; border: 1px solid;">Filter</button>
+          <button onclick="resetFilters()" style="color: black; font-size: 20px;">⟳</button>
+        </div>
+      
+          
+          
+            <div class="container">
+                <div class="product">
+                  <div class="img_button">
+                  <a href ="product1.html"><button><img src="MI1_1.jpg" alt="Product 1"></button></a>
+                </div>
+                  <h3>Men's Green T-shirt</h3>
+                  <h4>Elegant Men's Dress | Classic Fit</h4>
+                  <p>₹599</p>
+                  <h4>free Delivery</h4>
+                  <button onclick="addToCart('Mens Green T-shirt', 599)">Add to Cart</button>
+                </div>
+                <div class="product">
+                  <div class="img_button">
+                    <a href ="product2.html"><button><img src="MI2_2.jpg" alt="Product 2"></button></a></div>
+                    <h3>Formal Suit</h3>
+                    <h4>Perfect for Business Meetings and Formal Events</h4>
+                    <p>₹3999</p>
+                    <h4>free Delivery</h4>
+                    <button onclick="addToCart('Formal Suit', 3999)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product3.html"><button><img src="MI3_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Printed Shirt</h3>
+                    <h4>High-quality Fabric</h4>
+                    <p>₹799</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Printed Shirt', 799)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product4.html"><button><img src="MI4_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Chinese Collar T-shirt</h3>
+                    <h4>Slim Fit</h4>
+                    <p>₹799</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Chinese Collar T-shirt', 799)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product5.html"><button><img src="MI5_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Formal Black</h3>
+                    <h4>Sophisticated Formal Wear</h4>
+                    <p>₹999</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Formal Black', 999)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product6.html"><button><img src="MI6_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Formal Blue</h3>
+                    <h4>Premium Material</h4>
+                    <p>₹849</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Formal Blue', 849)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product7.html"><button><img src="MI7_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Black Checked Shirt</h3>
+                    <h4>Elegant Business Attire</h4>
+                    <p>₹899</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Black Checked Shirt', 899)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product8.html"><button><img src="MI8_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Blue Formal Suit</h3>
+                    <h4>Perfect for Formal Occasions</h4>
+                    <p>₹999</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Blue Formal Suit', 9999)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product9.html"><button><img src="MI9_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Business Suit Navy Blue</h3>
+                    <h4>Ideal for Formal Events</h4>
+                    <p>₹899</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Business Suit Navy Blue', 899)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product10.html"><button><img src="MI10_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Formal White</h3>
+                    <h4>Classic Formal Attire</h4>
+                    <p>₹799</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Formal White', 799)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product11.html"><button><img src="MI11_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's White Suit</h3>
+                    <h4>Modern Business Suit</h4>
+                    <p>₹899</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s White Suit', 899)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product12.html"><button><img src="MI12_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Buisness Blue</h3>
+                    <h4>Elegant Business Suit</h4>
+                    <p>₹899</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Buisness Blue', 39.99)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product13.html"><button><img src="MI13_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Classic Formal Suit</h3>
+                    <h4>High-Quality Material</h4>
+                    <p>₹849</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Classic Formal Suit', 849)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product14.html"><button><img src="MI14_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Men's Premium Dress</h3>
+                    <h4>Slim Fit</h4>
+                    <p>₹899</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Men\'s Premium Dress', 899)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product15.html"><button><img src="MI15_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Formal Suit</h3>
+                    <h4>Elegant Formal Suit</h4>
+                    <p>₹949</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Formal Suit', 949)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product16.html"><button><img src="MI16_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Office Shirt</h3>
+                    <h4> High-End Material</h4>
+                    <p>₹899</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Office Shirt', 899)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product17.html"><button><img src="MI17_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Evening T-Shirt</h3>
+                    <h4> High-End Material</h4>
+                    <p>₹999</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Evening T-Shirt', 999)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product18.html"><button><img src="MI18_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Office Shirt</h3>
+                    <h4>Durable Fabric</h4>
+                    <p>₹850</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Office Shirt', 850)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product19.html"><button><img src="MI19_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Blazer Set</h3>
+                    <h4>Casual Blazer Set</h4>
+                    <p>₹650</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Blazer Set', 650)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="product20.html"><button><img src="MI20_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Tuxedo Set</h3>
+                    <h4>Modern Tuxedo Set</h4>
+                    <p>₹1200</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Tuxedo Set', 1200)">Add to Cart</button>
+                  </div>
+                </div>
+                <script src="script.js"></script>
+                <script>
+                  function redirectToCheckout() {
+                    window.location.href = 'checkout.html'; 
+                  }
+                </script>
+                 <footer>
+                  <p>&copy; 2024 Duno Store. All rights reserved.</p>
+                </footer>
+              </body>
+              </html>

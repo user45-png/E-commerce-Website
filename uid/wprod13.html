@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="product_info.css">
+</head>
+<body>
+  <header>
+    <h1>Kaftan Top</h1>
+    <div class="cart">
+      <div class="cart-box" id="cartBox">
+        <ul id="cartItems">
+        </ul>
+        <button class="cart-button" onclick="redirectToCheckout()">
+          <span class="cart-icon">🛒</span>Cart
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="homepage.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <div class="image-slider">
+      <img id="productImage" src="wi13_1.jpg" alt="Product Image" onclick="openModal()">
+
+      <div id="myModal" class="modal">
+
+        <div class="modal-content">
+          <img id="modalImage" src="wi13_1.jpg" alt="Product Image">
+        </div>
+        <div class="close" onclick="closeModal()"></div>
+      </div>
+      <div class="button-container">
+        <button id="prevButton" onclick="prevImage()" style="background-color: white; color: black;">&#10094;</button>
+        <button id="nextButton" onclick="nextImage()" style="background-color: white; color: black;">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h2>Description:</h2>
+      <p>PIAAH Madhubani Printed Stitched Kaftan Top Viscose Silk, Calf Length, Free Size - Stylish & Chic for Women.</p>
+      <h2>Price:</h2>
+      <p>₹2,500</p>
+      <button onclick="addToCart('Kaftan Top', 2500)">Add to Cart</button>
+      <h2>Specifications:</h2>
+      <ul>
+        <li>Material composition:Viscose Silk</li>
+        <li>Fit type:Madhubani Floral 3</li>
+        <li>Country of Origin: India</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let currentImageIndex = 0;
+    const images = [
+      'wi13_1.jpg',
+      'wi13_2.jpg',
+      'wi13_3.jpg',
+      'wi13_4.jpg'
+    ];
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      document.getElementById('productImage').src = images[currentImageIndex];
+      document.getElementById('modalImage').src = images[currentImageIndex];
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      document.getElementById('productImage').src = images[currentImageIndex];
+      document.getElementById('modalImage').src = images[currentImageIndex];
+    }
+    var modal = document.getElementById("myModal");
+
+
+function openModal() {
+  modal.style.display = "block";
+}
+
+
+function closeModal() {
+  modal.style.display = "none";
+}
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+    </script>
+    <script>
+    function addToCart(productName, price) {
+      const cartItems = document.getElementById('cartItems');
+      const newItem = document.createElement('li');
+      newItem.textContent = `${productName} - $${price}`;
+      cartItems.appendChild(newItem);
+    }
+    
+  </script>
+  <script src="script.js"></script>
+  <script>
+    function redirectToCheckout() {
+      window.location.href = 'checkout.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homepage</title>
+ <link rel ="stylesheet" href ="product.css">
+</head>
+<body>
+    <header>
+      <nav class="menu">
+        <div class="dropdown">
+            <button onclick="toggleMenu()" class="menu_button">
+              Menu
+            </button>
+            <div class="dropdown-content" id="menuContent">
+                <a href="mens.html">Men's</a>
+                <a href="womens.html">Women's</a>
+                <a href="kids.html">Kids</a>
+            </div>
+        </div>
+    </nav>
+    
+      
+        <div class="cart">
+            <div class="cart-box" id="cartBox">
+              
+              <ul id="cartItems">
+               
+              </ul>
+              <button class ="cart-button" onclick="redirectToCheckout()" href ="checkout.html">
+                <span class="cart-icon">🛒</span>Cart
+              </button>
+                
+            </div>
+            
+          </div>
+          
+        </header>
+       
+        <nav>
+          <a href="homepage.html">Home</a>
+          <a href="aboutus.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+        <div class="title">
+          <h1>Kids clothing</h1>
+        </div>
+        <div class="filter">
+          <label for="minPrice">Min Price:</label>
+          <input type="number" id="minPrice" min="0" placeholder="Min">
+          <label for="maxPrice">Max Price:</label>
+          <input type="number" id="maxPrice" min="0" placeholder="Max">
+          <button onclick="filterProducts()" style="color: black; border: 1px solid;">Filter</button>
+          <button onclick="resetFilters()" style="color: black; font-size: 20px;">⟳</button>
+       </div>
+      
+          
+          
+            <div class="container">
+                <div class="product">
+                  <div class="img_button">
+                  <a href ="cproduct1.html"><button><img src="cI1_1.jpg" alt="Product 1"></button></a>
+                </div>
+                <h3>Floral Party Dress</h3>
+                <h4>Charming Children's Dress</h4>
+                <p>₹399</p>
+                 <h4>free Delivery</h4>
+                 <button onclick="addToCart('Floral Party Dress', 399)">Add to Cart</button>
+                </div>
+                <div class="product">
+                  <div class="img_button">
+                    <a href ="cproduct2.html"><button><img src="CI2_2.jpg" alt="Product 2"></button></a></div>
+                    <h3>Casual Summer Dress</h3>
+                    <h4>Comfortable Fit</h4>
+                    <p>₹599</p>
+                    <h4>free Delivery</h4>
+                    <button onclick="addToCart('Casual Summer Dress', 599)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct3.html"><button><img src="CI3_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Festive Floral Dress</h3>
+                    <h4>Charming Children's Dress</h4>
+                    <p>₹1799</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Festive Floral Dress', 1799)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct4.html"><button><img src="CI4_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Elegant Party Dress</h3>
+                    <h4>Slim Fit</h4>
+                    <p>₹799</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Elegant Party Dress', 799)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct5.html"><button><img src="CI5_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Cute Summer Dress</h3>
+                    <h4>Soft Fabric</h4>
+                    <p>₹999</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Cute Summer Dress', 999)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct6.html"><button><img src="CI6_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Playful Day Dress</h3>
+                    <h4>Premium Material</h4>
+                    <p>₹399</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Playful Day Dress', 399)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct7.html"><button><img src="CI7_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Charming Event Dress</h3>
+                    <h4>Comfortable Fit </h4>
+                    <p>₹499</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Charming Event Dress', 499)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct8.html"><button><img src="CI8_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Sunny Day Dress</h3>
+                    <h4>Charming Children's Dress</h4>
+                    <p>₹899</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Sunny Day Dress', 899)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct9.html"><button><img src="CI9_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Winter Warm Dress</h3>
+                    <h4>Ideal for Events</h4>
+                    <p>₹2999</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Winter Warm Dress', 2999)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct10.html"><button><img src="CI10_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Festive Party Dress</h3>
+                    <h4>Classic Attire</h4>
+                    <p>₹2499</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Festive Party Dress', 2499)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct11.html"><button><img src="CI11_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Spring Floral Dress</h3>
+                    <h4>Modern</h4>
+                    <p>₹3499</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Spring Floral Dress', 3499)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct12.html"><button><img src="CI12_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Casual Day Dress</h3>
+                    <h4>Soft Fabric </h4>
+                    <p>₹1499</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Casual Day Dress', 1499)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct13.html"><button><img src="CI13_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Summer Fun Dress</h3>
+                    <h4>Soft Fabric </h4>
+                    <p>₹299</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Summer Fun Dress', 299)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct14.html"><button><img src="CI14_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Cozy Night Dress</h3>
+                    <h4>Charming Children's Dress</h4>
+                    <p>₹199</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Cozy Night Dress', 199)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct15.html"><button><img src="CI15_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Holiday Joy Dress</h3>
+                    <h4>Perfect for Playtime</h4>
+                    <p>₹899</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Holiday Joy Dress', 899)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct16.html"><button><img src="CI16_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Sunshine Princess Dress</h3>
+                    <h4>Special Events</h4>
+                    <p>₹799</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Sunshine Princess Dress', 799)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct17.html"><button><img src="CI17_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Starry Night Dress</h3>
+                    <h4>Charming Children's Dress/h4>
+                    <p>₹699</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Starry Night Dress' , 699)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct18.html"><button><img src="CI18_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Daisy Dream Dress</h3>
+                    <h4>Comfortable Fit</h4>
+                    <p>₹1799</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Daisy Dream Dress', 1799)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct19.html"><button><img src="CI19_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Fairy Tale Dress</h3>
+                    <h4>Soft Fabric</h4>
+                    <p>₹2699</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Fairy Tale Dress', 2699)">Add to Cart</button>
+                  </div>
+                  <div class="product">
+                    <div class="img_button">
+                    <a href ="cproduct20.html"><button><img src="CI20_1.jpg" alt="Product 3"></button></a></div>
+                    <h3>Garden Fairy Dress</h3>
+                    <h4>Perfect for Playtime and Special Events</h4>
+                    <p>₹699</p>
+                     <h4>free Delivery</h4>
+                     <button onclick="addToCart('Garden Fairy Dress', 699)">Add to Cart</button>
+                  </div>
+                </div>
+                <script src="script.js"></script>
+                <script>
+                  function redirectToCheckout() {
+                    window.location.href = 'checkout.html'; 
+                  }
+                </script>
+                 <footer>
+                  <p>&copy; 2024 Duno Store. All rights reserved.</p>
+                </footer>
+              </body>
+              </html>

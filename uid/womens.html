@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amazon-like Homepage</title>
+ <link rel ="stylesheet" href ="product.css">
+</head>
+<body>
+    <header>
+      <nav class="menu">
+        <div class="dropdown">
+            <button onclick="toggleMenu()" class="menu_button">
+             Menu
+            </button>
+            <div class="dropdown-content" id="menuContent">
+                <a href="mens.html">Men's</a>
+                <a href="womens.html">Women's</a>
+                <a href="kids.html">Kids</a>
+            </div>
+        </div>
+    </nav>
+      
+      
+        <div class="cart">
+            <div class="cart-box" id="cartBox">
+              <ul id="cartItems">
+                
+              </ul>
+              <button class ="cart-button" onclick="redirectToCheckout()" href ="checkout.html">
+                <span class="cart-icon">🛒</span>Cart
+              </button>
+            </div>
+          </div>
+        </header>
+        <nav>
+          <a href="homepage.html">Home</a>
+          <a href="aboutus.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+        </nav>
+          
+          <div class="title">
+            <h1>Womens clothing</h1>
+          </div>
+          <div class="filter">
+            <label for="minPrice">Min Price:</label>
+            <input type="number" id="minPrice" min="0" placeholder="Min">
+            <label for="maxPrice">Max Price:</label>
+            <input type="number" id="maxPrice" min="0" placeholder="Max">
+            <button onclick="filterProducts()" style="color: black; border: 1px solid;">Filter</button>
+            <button onclick="resetFilters()" style="color: black; font-size: 20px;">⟳</button>
+          </div>
+          <div class="container">
+            <div class="product">
+              <div class="img_button">
+              <a href ="wprod1.html"><button><img src="wi1_1.jpg" alt="Product 1"></button></a>
+            </div>
+              <h3>Girl's Top Half Sleeve</h3>
+              <h4>Quick Drying & Breathable Fabric</h4>
+              <p>₹995</p>
+              <h4>free Delivery</h4>
+              <button onclick="addToCart('Product 1', 995)">Add to Cart</button>
+            </div>
+            <div class="product">
+              <div class="img_button">
+                <a href ="wprod2.html"><button><img src="wi2_1.jpg" alt="Product 2"></button></a></div>
+                <h3>Women's Printed Kurti</h3>
+                <h4>KLOSIA Women Viscose Printed Kurti</h4>
+                <p>₹639</p>
+                <h4>free Delivery</h4>
+                <button onclick="addToCart('Women\'s Printed Kurti', 639)">Add to Cart</button>
+              </div>
+              <div class="product">
+                <div class="img_button">
+                <a href ="wprod3.html"><button><img src="wi3_1.jpg" alt="Product 3"></button></a></div>
+                <h3>GoSriKi Women Kurta</h3>
+                <h4>GoSriKi Women Kurta with Pant</h4>
+                <p>₹489</p>
+                 <h4>free Delivery</h4>
+                 <button onclick="addToCart('GoSriKi Women Kurta', 489)">Add to Cart</button>
+              
+            </div>
+            <div class="product">
+              <div class="img_button">
+              <a href ="wprod4.html"><button><img src="wi4_1.jpg" alt="Product 3"></button></a></div>
+              <h3>Women's Floral Top</h3>
+              <h4>rytras Women's Floral Printed Cotton Top</h4>
+              <p>₹479</p>
+               <h4>free Delivery</h4>
+               <button onclick="addToCart('Women\'s Floral Top', 479)">Add to Cart</button>
+            </div>
+          
+          <div class="product">
+            <div class="img_button">
+            <a href ="wprod5.html"><button><img src="wi5_1.jpg" alt="Product 3"></button></a></div>
+            <h3>Women's Nigt Suit</h3>
+            <h4> Cotton Printed Night Suit Set of Top & Shorts</h4>
+            <p>₹499</p>
+             <h4>free Delivery</h4>
+             <button onclick="addToCart('Product 3', 499)">Add to Cart</button>
+          </div>
+       
+        <div class="product">
+          <div class="img_button">
+          <a href ="wprod6.html"><button><img src="wi6_1.jpg" alt="Product 3"></button></a></div>
+          <h3>Fancy Women Formal Shirt</h3>
+          <h4>Shirts for Women Stylish Western</h4>
+          <p>₹501</p>
+           <h4>free Delivery</h4>
+           <button onclick="addToCart('Fancy Women Formal Shirt', 501)">Add to Cart</button>
+        </div>
+     
+      <div class="product">
+        <div class="img_button">
+        <a href ="wprod7.html"><button><img src="wi7_1.jpg" alt="Product 3"></button></a></div>
+        <h3> Anarkali Kurta</h3>
+        <h4>Kurta with Pant and Dupatta</h4>
+        <p>₹767</p>
+         <h4>free Delivery</h4>
+         <button onclick="addToCart(' Anarkali Kurta', 767)">Add to Cart</button>
+      </div>
+   
+    <div class="product">
+      <div class="img_button">
+      <a href ="wprod8.html"><button><img src="wi8_1.jpg" alt="Product 3"></button></a></div>
+      <h3> Rayon Short Anarkali Kurta</h3>
+      <h4>Women and Girls for Wedding (Pink)</h4>
+      <p>₹995</p>
+       <h4>free Delivery</h4>
+       <button onclick="addToCart(' Rayon Short Anarkali Kurta', 995)">Add to Cart</button>
+    </div>
+
+  <div class="product">
+    <div class="img_button">
+    <a href ="wprod9.html"><button><img src="wi9_1.jpg" alt="Product 3"></button></a></div>
+    <h3>Women's printed T-shirt</h3>
+    <h4>Cotton Round Neck Printed T-Shirt</h4>
+    <p>₹395</p>
+     <h4>free Delivery</h4>
+     <button onclick="addToCart('Women\'s printed T-shirt', 395)">Add to Cart</button>
+  </div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod10.html"><button><img src="wi10_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Women's Pajamas</h3>
+  <h4>Animal Print Pajama Set Pack of 2</h4>
+  <p>₹999</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Women\'s Pajamas', 999)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod11.html"><button><img src="wi11_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Chikankari White Cotton Short Kurti</h3>
+  <h4>Hand Embroidered Lucknow Chikankari</h4>
+  <p>₹1389</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Chikankari White Cotton Short Kurti', 1389)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod12.html"><button><img src="wi12_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Women's Fashion T-shirt</h3>
+  <h4>Leriya Fashion Women's Regular Fit T-Shirt4</h4>
+  <p>₹379</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Women\'s Fashion T-shirt', 379)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod13.html"><button><img src="wi13_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Kaftan Top</h3>
+  <h4>PIAAH Madhubani Printed Stitched Kaftan Top</h4>
+  <p>₹2,500</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Kaftan Top', 2500)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod14.html"><button><img src="wi14_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Women Western Dress</h3>
+  <h4>Description</h4>
+  <p>₹369</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Women Western Dress', 369)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod15.html"><button><img src="wi15_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Sports Printed T-Shirt</h3>
+  <h4>Regular Fit Gym Sports Printed T-Shirt</h4>
+  <p>₹388</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Sports Printed T-Shirt', 388)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod16.html"><button><img src="wi16_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Yoga Pants</h3>
+  <h4>Women's Stretch Fit Yoga Pants</h4>
+  <p>₹378</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Yoga Pants', 378)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod17.html"><button><img src="wi17_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Short A-Line Dress</h3>
+  <h4>Western Dresses for Women</h4>
+  <p>₹319</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Short A-Line Dress', 319)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod18.html"><button><img src="wi18_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Designer Dress</h3>
+  <h4>Solid Designer Dress for Women</h4>
+  <p>₹999</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Designer Dress', 999)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod19.html"><button><img src="wi19_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Women's Coord Set</h3>
+  <h4>GRECIILOOKS Women's Coord Set</h4>
+  <p>₹599</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Women\'s Coord Set', 599)">Add to Cart</button>
+</div>
+
+<div class="product">
+  <div class="img_button">
+  <a href ="wprod20.html"><button><img src="wi20_1.jpg" alt="Product 3"></button></a></div>
+  <h3>Chiffon Saree</h3>
+  <h4>Satrani Women'S Chiffon Ready To Wear Saree</h4>
+  <p>₹799</p>
+   <h4>free Delivery</h4>
+   <button onclick="addToCart('Chiffon Saree', 799)">Add to Cart</button>
+</div>
+</div>
+            <script src="script.js"></script>
+            <script>
+              function redirectToCheckout() {
+                window.location.href = 'checkout.html'; // Redirect to checkout page
+              }
+            </script>
+             <footer>
+              <p>&copy; 2024 Duno Store. All rights reserved.</p>
+            </footer>
+          </body>
+          </html>

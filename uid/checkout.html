@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CHECK OUT</h1>
+  </header>
+
+  <nav>
+    <a href="homepage.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <ul id="checkoutItems"></ul>
+      <div class="total">
+        <strong>Total:</strong> <span id="totalAmount">₹0.00</span>
+      </div>
+    </div>
+
+    <div class="payment">
+      <h2>Enter Payment Information</h2>
+      <form name="submit-to-google-sheet" id="paymentForm" action="/process_payment" method="POST">
+        <label for="total">Total Amount:</label><br>
+        <input type="text" id="total" name="total" value="₹0.00" readonly><br><br>
+        <input type="hidden" id="cartItems" name="cartItems">
+
+        <label for="name">Customer Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="Phone_Number">Phone Number:</label><br>
+        <input type="text" id="Phone_Number" name="Phone_Number" required><br><br>
+
+        <label>Payment Type:</label><br><br>
+        <input type="radio" id="radio1" name="paymentType" value="GPay" onclick="openModal()" required>
+        <label for="payment_gpay">GPay</label><br><br>
+        <input type="radio" id="payment_cod" name="paymentType" value="Cash On Delivery" required>
+        <label for="payment_cod">Cash On Delivery</label><br><br><br>
+
+        <label for="billing_address">Billing Address:</label><br>
+        <textarea id="billing_address" name="billing_address" required></textarea><br><br>
+        
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+        <input type="submit" value="Submit Payment">
+      </form>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between;">
+        <p class="text1">Pay By UPI: Sabari@okhdfc</p>
+        <button type="button" class="button1" onclick="copy()" style="height: 50px;">Copy</button>
+      </div>
+      <div><hr></div>
+      <div>
+        <p class="text1">Pay By QR:</p>
+        <img src="qr.png" style="width: 200px; height: 200px;">
+      </div>
+      <div class="ok_button">
+        <button type="button" onclick="closeModal()" class="OK">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycby-mixxW1Y4tR_CSDBAN2IdvzIJsGmnL1IfezROKbyP1tZbGovDcDR5u1tWgE-rFnxN/exec';
+    const form = document.forms['submit-to-google-sheet'];
+
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+          console.log('Success!', response);
+          handleFormSubmission();
+        })
+        .catch(error => console.error('Error!', error.message));
+    });
+
+    function handleFormSubmission() {
+        alert('Payment submitted successfully!');
+      
+    }
+
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    const checkoutItemsList = document.getElementById('checkoutItems');
+    const totalAmountElement = document.getElementById('totalAmount');
+    const cartItemsInput = document.getElementById('cartItems');
+
+    checkoutItemsList.innerHTML = '';
+    let totalPrice = 0;
+
+    cartItems.forEach(item => {
+      const listItem = document.createElement('li');
+      listItem.textContent = `${item.name} - ₹${item.price.toFixed(2)}`;
+      checkoutItemsList.appendChild(listItem);
+      totalPrice += item.price;
+
+      const itemInput = document.createElement('input');
+      itemInput.type = 'hidden';
+      itemInput.name = `product_${item.name}`;
+      itemInput.value = JSON.stringify(item);
+      document.getElementById('paymentForm').appendChild(itemInput);
+    });
+
+    totalAmountElement.textContent = `₹${totalPrice.toFixed(2)}`;
+    document.getElementById('total').value = `₹${totalPrice.toFixed(2)}`;
+    cartItemsInput.value = JSON.stringify(cartItems);
+
+    function openModal() {
+      const modal = document.getElementById("myModal");
+      modal.style.display = "block";
+    }
+
+    function closeModal() {
+      const modal = document.getElementById("myModal");
+          modal.style.display = "none";
+    }
+
+    function copy() {
+      const message = "Sabari@okhdfc";
+      const tempInput = document.createElement('input');
+      tempInput.value = message;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      document.execCommand('copy');
+      document.body.removeChild(tempInput);
+    }
+
+    document.getElementById('radio1').addEventListener('change', () => {
+      if (document.getElementById('radio1').checked) {
+        openModal();
+      }
+    });
+  </script>
+
+  <footer>
+    <p>&copy; 2024 Duno Store. All rights reserved.</p>
+  </footer>
+</body>
+</html>

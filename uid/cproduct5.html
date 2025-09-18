@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Children's Dress Page</title>
+  <link rel="stylesheet" href="product_info.css">
+</head>
+<body>
+  <header>
+    <h1>Children's Dress</h1>
+    <div class="cart">
+      <div class="cart-box" id="cartBox">
+        <ul id="cartItems">
+        </ul>
+        <button class="cart-button" onclick="redirectToCheckout()">
+          <span class="cart-icon">🛒</span>Cart
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="homepage.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <div class="image-slider">
+      <img id="productImage" src="CI5_1.jpg" alt="Product Image" onclick="openModal()">
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <img id="modalImage" src="CI5_1.jpg" alt="Product Image">
+        </div>
+        <div class="close" onclick="closeModal()"></div>
+      </div>
+      <div class="button-container">
+        <button id="prevButton" onclick="prevImage()" style="background-color: white; color: black;">&#10094;</button>
+        <button id="nextButton" onclick="nextImage()" style="background-color: white; color: black;">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h2>Description:</h2>
+      <p>Charming Children's Dress | Comfortable Fit | Soft Fabric | Perfect for Playtime and Special Events</p>
+      <h2>Price:</h2>
+      <p>₹999</p>
+      <button onclick="addToCart('Cute Summer Dress', 999)">Add to Cart</button>
+      <h2>Specifications:</h2>
+      <ul>
+        <li>Material composition: Cotton Blend</li>
+        <li>Fit type: Relaxed Fit</li>
+        <li>Country of Origin: India</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let currentImageIndex = 0;
+    const images = [
+      'CI5_1.jpg',
+      'CI5_2.jpg',
+      'CI5_3.jpg',
+      'CI5_4.jpg'
+    ];
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      document.getElementById('productImage').src = images[currentImageIndex];
+      document.getElementById('modalImage').src = images[currentImageIndex];
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      document.getElementById('productImage').src = images[currentImageIndex];
+      document.getElementById('modalImage').src = images[currentImageIndex];
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's Dress Page</title>
+  <link rel="stylesheet" href="product_info.css">
+</head>
+<body>
+  <header>
+    <h1>Men's Printed Shirt</h1>
+    <div class="cart">
+      <div class="cart-box" id="cartBox">
+        <ul id="cartItems">
+        </ul>
+        <button class="cart-button" onclick="redirectToCheckout()">
+          <span class="cart-icon">🛒</span>Cart
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <a href="homepage.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+
+  <div class="container">
+    <div class="image-slider">
+      <img id="productImage" src="MI3_1.jpg" alt="Product Image" onclick="openModal()">
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <img id="modalImage" src="MI3_1.jpg" alt="Product Image">
+        </div>
+        <div class="close" onclick="closeModal()"></div>
+      </div>
+      <div class="button-container">
+        <button id="prevButton" onclick="prevImage()" style="background-color: white; color: black;">&#10094;</button>
+        <button id="nextButton" onclick="nextImage()" style="background-color: white; color: black;">&#10095;</button>
+      </div>
+    </div>
+
+    <div class="product-info">
+      <h2>Description:</h2>
+      <p>Stylish Men's Dress | Slim Fit | High-quality Fabric | Ideal for Parties and Formal Occasions</p>
+      <h2>Price:</h2>
+      <p>₹799</p>
+      <button onclick="addToCart('Men\'s Printed Shirt', 799)">Add to Cart</button>
+      <h2>Specifications:</h2>
+      <ul>
+        <li>Material composition: Polyester and Spandex Blend</li>
+        <li>Fit type: Slim Fit</li>
+        <li>Country of Origin: India</li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    let currentImageIndex = 0;
+    const images = [
+      'MI3_1.jpg',
+      'MI3_2.jpg',
+      'MI3_3.jpg',
+      'MI3_4.jpg'
+    ];
+
+    function nextImage() {
+      currentImageIndex = (currentImageIndex + 1) % images.length;
+      document.getElementById('productImage').src = images[currentImageIndex];
+      document.getElementById('modalImage').src = images[currentImageIndex];
+    }
+
+    function prevImage() {
+      currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+      document.getElementById('productImage').src = images[currentImageIndex];
+      document.getElementById('modalImage').src = images[currentImageIndex];
+    }
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>

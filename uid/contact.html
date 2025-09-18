@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+  <nav>
+    <a href="homepage.html">Home</a>
+    <a href="aboutus.html">About Us</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+  
+  <div class="container">
+    <div class="content">
+      <h2>Get in Touch</h2>
+      <p>Have a question or feedback? Fill out the form below, and we'll get back to you as soon as possible.</p>
+      <form name="submit-to-google-sheet" id="FeedbackForm" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+  <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbwocB6rwS_BtJNe2_9pp4RcHSxrAWBx10aDSuiXc99tShbEHx-3TqcsYeTn4FBZbiiA/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <script>
+    const paymentForm = document.getElementById('FeedbackForm');
+    FeedbackForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      alert('Payment submitted successfully!');
+      
+    });
+  </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <footer>
+    <p>&copy; 2024 Duno Store. All rights reserved.</p>
+  </footer>
+</body>
+</html>
